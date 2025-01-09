@@ -32,6 +32,7 @@ import { getSignedInUserId } from "@/data/getSignedInUserId";
 import { Toaster } from "@/components/ui/toaster";
 
 export const Route = createRootRoute({
+  pendingMs: 0,
   notFoundComponent() {
     return (
       <div className="text-3xl text-center py-10 text-muted-foreground">
@@ -115,6 +116,9 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
                   showName
                   appearance={{
                     elements: {
+                      userButtonAvatarBox: {
+                        border: "1px solid white",
+                      },
                       userButtonOuterIdentifier: {
                         color: "white",
                       },
